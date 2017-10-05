@@ -122,7 +122,7 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                         }
                     });
 
-            Toast.makeText(LoginActivity.this, "Authentication finished.",
+            Toast.makeText(LoginActivity.this, "Authentication successful.",
                     Toast.LENGTH_SHORT).show();
         }
         // [END auth_with_google]

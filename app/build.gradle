@@ -6,6 +6,10 @@ android {
             storeFile file('/home/julian/.android/debug.keystore')
             storePassword 'android'
         }
+        release {
+            storeFile file('/home/julian/keystore.jks')
+            storePassword 'julian-1989'
+        }
     }
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
