@@ -101,7 +101,10 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
             Log.d(TAG, "firebaseAuthWithGoogle:" + acct.getId());
             Toast.makeText(LoginActivity.this, "Authentication before.",
                     Toast.LENGTH_SHORT).show();
+            System.out.println(acct.getIdToken());
             AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+            Toast.makeText(LoginActivity.this, "Authentication before.",
+                    Toast.LENGTH_SHORT).show();
             mAuth.signInWithCredential(credential)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -123,6 +126,8 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                         }
                     });
+            Toast.makeText(LoginActivity.this, "Authentication finished.",
+                    Toast.LENGTH_SHORT).show();
         }
         // [END auth_with_google]
 
