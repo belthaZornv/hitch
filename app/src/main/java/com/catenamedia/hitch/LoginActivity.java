@@ -103,29 +103,25 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                     Toast.LENGTH_SHORT).show();
             System.out.println(acct.getIdToken());
             AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
-            Toast.makeText(LoginActivity.this, "Authentication before.",
-                    Toast.LENGTH_SHORT).show();
+
             mAuth.signInWithCredential(credential)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "signInWithCredential:success");
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                updateUI(user);
-                                Toast.makeText(LoginActivity.this, "Authentication success.",
-                                        Toast.LENGTH_SHORT).show();
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "signInWithCredential:failure", task.getException());
+                            Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
+
+                            // If sign in fails, display a message to the user. If sign in succeeds
+                            // the auth state listener will be notified and logic to handle the
+                            // signed in user can be handled in the listener.
+                            if (!task.isSuccessful()) {
+                                Log.w(TAG, "signInWithCredential", task.getException());
                                 Toast.makeText(LoginActivity.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
-                                updateUI(null);
                             }
-
+                            // [END_EXCLUDE]
                         }
                     });
+
             Toast.makeText(LoginActivity.this, "Authentication finished.",
                     Toast.LENGTH_SHORT).show();
         }
