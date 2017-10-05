@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "407235008799",
+    "firebase_url": "https://hitch-catenamedia.firebaseio.com",
+    "project_id": "hitch-catenamedia",
+    "storage_bucket": "hitch-catenamedia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407235008799:android:e800197f20e8d0dd",
+        "android_client_info": {
+          "package_name": "com.catenamedia.hitch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "407235008799-c146djplsj1olitoej1jaiaj9ajh3s7u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdvfB-r7XaLLK4h3RfkpxKo4RYxTIoxh8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
